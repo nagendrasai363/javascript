@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ticket Details</title>
+    <style>
+      div#maincontent {
+        height: 150px;
+        width: 500px;
+        border: 1px solid #cee2fa;
+        text-align: left;
+        color: #08438e;
+        font-family: calibri;
+        font-size: 20;
+        padding: 5px;
+      }
+      div#heading {
+        text-decoration: bold;
+        text-align: center;
+        margin-top: 80px;
+        width: 500px;
+        border: 1px solid #cee2fa;
+        text-align: center;
+        color: #08438e;
+        background-color: #cee2fa;
+        font-family: calibri;
+        font-size: 20;
+        padding: 5px;
+      }
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="heading">
+        <b>Theatre Drama</b>
+      </div>
+      <div id="maincontent">
+        <h4>Your Ticket Details:</h4>
+        <br />
+        <script>
+          //Write the code to calculate the total price and discounted price for the tickets
+
+          /* Problem Statement:
+          Write JavaScript code to do online booking of theatre tickets
+          and calculate the total price, considering the price per ticket as $9.
+          Also, apply a festive season discount of 10% and calculate the discounted amount.
+
+          OUTPUT:
+            Your Ticket Details:
+            Total number of seats booked: 3
+            Total cost of 3 tickets: $27
+            Festive season discount is: 10%
+            Total cost after discount is: 24.3
+
+          */
+
+          let noOfSeats = 3,
+            festiveDiscount = 10,
+            totalPrice,
+            costOfTickets;
+          const ticketPrice = 9;
+          costOfTickets = noOfSeats * ticketPrice;
+          totalPrice = costOfTickets - costOfTickets * (festiveDiscount / 100);
+          document.write(`Total number of seats booked: ${noOfSeats} <br /> Total Cost of ${noOfSeats} tickets: ${costOfTickets}
+          <br />Festive season discount is: ${festiveDiscount}% <br /> Total cost after discount is: ${totalPrice}`);
+
+          /* Task Completed Successfully */
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
