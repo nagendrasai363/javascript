@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking Details</title>
+    <style>
+      div#maincontent {
+        height: 200px;
+        width: 600px;
+        border: 1px solid #cee2fa;
+        text-align: left;
+        color: #08438e;
+        font-family: calibri;
+        font-size: 20;
+        padding: 5px;
+      }
+      div#heading {
+        text-decoration: bold;
+        text-align: center;
+        margin-top: 80px;
+        width: 600px;
+        border: 1px solid #cee2fa;
+        text-align: center;
+        color: #08438e;
+        background-color: #cee2fa;
+        font-family: calibri;
+        font-size: 20;
+        padding: 5px;
+      }
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="heading">
+        <b>Theatre Drama</b>
+      </div>
+      <div id="maincontent">
+        <h4>Your Ticket Details:</h4>
+        <br />
+        <script>
+          // Write the code to display the total price and discounted price of tickets
+
+          /*Problem Statement:
+          Write a JavaScript code to make online booking of theatre tickets and
+          calculate the total price based on the below conditions:
+          If seats to be booked are not more than 2, the cost per ticket remains $9.
+          If seats are 5 or more, booking is not allowed.
+
+          If seats to be booked are more than 2 but less than 5, based on the number of seats booked,
+          do the following:
+          Calculate total cost by applying discounts of 5, 7, 9, 11 percent, and
+          so on for customer 1,2,3 and 4.
+          Try the code with different values for the number of seats.
+
+          EXPECTED OUTPUT:
+          Theatre Drama
+          Your Ticket Details:
+          Ticket for Customer 1 gets 5% discount!, Cost is: $8.549999999999999
+          Ticket for Customer 2 gets 7% discount!, Cost is: $8.37
+          Ticket for Customer 3 gets 9% discount, Cost is: $8.19
+          Ticket for Customer 4 gets 11% discount, Cost is: $8.01
+          For 4 tickets, you need to pay: $33.12 instead of $36
+          */
+
+          let totalPrice,
+            ticketPrice = 9;
+          var noOfSeats = 1;
+
+          switch (noOfSeats) {
+            case noOfSeats <= 2:
+              console.log("in less than 2");
+              totalPrice = noOfSeats * ticketPrice;
+              document.write(`Total Tickets Price is: ${totalPrice}`);
+              break;
+            case noOfSeats >= 5:
+              document.write("Booking is not allowed for 5 or more seats");
+              break;
+            case noOfSeats > 2 && noOfSeats < 5:
+              // possible values are 3,4
+              if (noOfSeats === 3) {
+                //loops and arrays concepts cannot be used
+                totalPrice =
+                  ticketPrice * (1 - 0.05) +
+                  (ticketPrice * (1 - 0.07) + ticketPrice * (1 - 0.09));
+              } else {
+                //case for value 4
+                totalPrice =
+                  ticketPrice * (1 - 0.05) +
+                  (ticketPrice * (1 - 0.07) +
+                    ticketPrice * (1 - 0.09) +
+                    ticketPrice * (1 - 0.11));
+                document.write(`Total Tickets Price is: ${totalPrice}`);
+              }
+            default:
+              console.log(noOfSeats <= 2);
+              document.write("Invalid No of Seats Selected");
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
